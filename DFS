@@ -1,9 +1,7 @@
 def dfs_shortest_path(adj, start, target):
-    """
     adj: dict node -> list of neighbors
     start, target: nodes
     returns: a path from start to target (DFS does not guarantee shortest)
-    """
     if start == target:
         return [start]
 
@@ -26,8 +24,6 @@ def dfs_shortest_path(adj, start, target):
                     return path
                 stack.append(v)
     return None
-
-# ----------------------------
 if __name__ == "__main__":
     graph = {
         'A': ['B','C'],
