@@ -1,5 +1,3 @@
-# Depth-First Search (DFS) in Python for AI
-
 graph = {
     'A': ['B', 'C'],
     'B': ['D', 'E'],
@@ -20,6 +18,5 @@ def dfs(graph, start, visited=None):
             dfs(graph, neighbor, visited)
     return visited
 
-# Driver code
 print("DFS Traversal starting from node A:")
 dfs(graph, 'A')
