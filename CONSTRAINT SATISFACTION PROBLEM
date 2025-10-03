@@ -1,8 +1,6 @@
 import random
-
 colors = ['Red','Green','Blue']
 neighbors = {'A':['B','C'], 'B':['A','C','D'], 'C':['A','B','D'], 'D':['B','C']}
-
 
 def valid(assignment):
     for region in neighbors:
@@ -10,7 +8,6 @@ def valid(assignment):
             if region in assignment and n in assignment and assignment[region]==assignment[n]:
                 return False
     return True
-
 
 def csp(assignment={}):
     if len(assignment) == len(neighbors):
