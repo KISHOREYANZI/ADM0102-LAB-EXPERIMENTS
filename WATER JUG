@@ -1,7 +1,6 @@
 from collections import deque
-
 def water_jug_bfs(jug1, jug2, target):
-    
+
     queue = deque()
     visited = set()
 
@@ -10,7 +9,6 @@ def water_jug_bfs(jug1, jug2, target):
     while queue:
         (a, b), path = queue.popleft()
 
-        
         if a == target or b == target:
             path.append((a, b))
             return path
@@ -18,7 +16,6 @@ def water_jug_bfs(jug1, jug2, target):
         if (a, b) in visited:
             continue
         visited.add((a, b))
-
         
         possible_states = [
             (jug1, b),          # Fill jug1
@@ -36,8 +33,6 @@ def water_jug_bfs(jug1, jug2, target):
                 queue.append((state, path + [(a, b)]))
 
     return None
-
-
 
 jug1 = int(input("Enter capacity of Jug1: "))
 jug2 = int(input("Enter capacity of Jug2: "))
