@@ -1,0 +1,25 @@
+fever(john).
+cough(john).
+sore_throat(john).
+
+fever(mary).
+headache(mary).
+
+has_flu(Person) :
+    fever(Person),
+    cough(Person),
+    sore_throat(Person).
+
+has_cold(Person) :
+    cough(Person),
+    sore_throat(Person),
+    fever(Person).
+
+has_migraine(Person) :
+    headache(Person),
+    fever(Person).
+
+has_flu(john).
+has_cold(john).
+has_migraine(mary).
+has_cold(mary).
