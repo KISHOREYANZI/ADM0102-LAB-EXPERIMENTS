@@ -1,0 +1,27 @@
+fact(a).
+fact(b).
+rule([a, b], c).
+rule([c], d).
+rule([d], e).
+
+forward_chain :-
+    new_fact(Conclusion),
+    assert(fact(Conclusion)),
+    write('Derived new fact: '), write(Conclusion), nl,
+    forward_chain.
+
+forward_chain :-
+    write('No more new facts can be derived.'), nl.
+
+new_fact(Conclusion) :-
+    rule(Conditions, Conclusion),
+    fact(Conclusion),
+    all_true(Conditions).
+
+all_true([]).
+all_true([H|T]) :-
+    fact(H),
+    all_true(T).
+
+forward_chain.
+fact(e).
